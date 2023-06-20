@@ -9,12 +9,22 @@ include './db.php'
     <title>php-oop-1</title>
 </head>
 <body>
-    <?php echo $Spider_Man -> name ?> <br>
-    <?php echo $Spider_Man -> language ?> <br>
-    <?php echo $Spider_Man -> description ?> <br>
-    <?php echo $Spider_Man -> getAge() ?> <br>
-    <?php echo $Spider_Man -> genre[0][0] . ' ' .  $Spider_Man->genre[0][1]?> <br>
-
-
+<div>
+    <div>
+        <div>
+            <?php foreach ($Movies_Array as $Movie) 
+            {?>
+            <ul>
+                <li> <?php echo $Movie -> name ?></li>
+                <li> <?php echo $Movie -> getAge() ?></li>
+                <li> <?php echo $Movie -> description ?></li>
+                <li><?php foreach ($Movie->genre[0] as $value) {
+                                echo $value.', ';
+                } ?></li>
+            </ul>
+            <?php  }?>
+        </div>
+    </div>
+</div>
 </body>
 </html>
